@@ -4,9 +4,9 @@ import com.smh.myprojectone.model.CustomUserDetail;
 import com.smh.myprojectone.model.User;
 import com.smh.myprojectone.repository.UserRepository;
 import lombok.Data;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+//import org.springframework.security.core.userdetails.UserDetails;
+//import org.springframework.security.core.userdetails.UserDetailsService;
+//import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

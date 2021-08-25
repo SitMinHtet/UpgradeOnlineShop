@@ -8,16 +8,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @Data
+@RequestMapping({"/","/home"})
 public class HomeController {
 
     private final CategoryService categoryService;
     private final ProductService productService;
 
 
-    @GetMapping({"/", "/home"})
+    @GetMapping()
     public String homePage(Model model){
         return "index";
     }
@@ -36,7 +38,7 @@ public class HomeController {
         return "shop";
     }
 
-    @GetMapping("shop/viewproduct/{id}")
+    @GetMapping("shop/viewProduct/{id}")
     public String viewProduct(@PathVariable int id, Model model){
         model.addAttribute("product", productService.findById(id));
         return "viewProduct";

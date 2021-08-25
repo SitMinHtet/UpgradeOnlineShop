@@ -4,7 +4,7 @@ package com.smh.myprojectone.controller;
 import com.smh.myprojectone.repository.RoleRepository;
 import com.smh.myprojectone.repository.UserRepository;
 import lombok.Data;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -14,7 +14,7 @@ public class LoginController {
 
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
-    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+   // private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @GetMapping("login")
     private String login(){

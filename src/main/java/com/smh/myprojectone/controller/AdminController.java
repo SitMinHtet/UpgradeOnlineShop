@@ -5,6 +5,7 @@ import com.smh.myprojectone.model.Category;
 import com.smh.myprojectone.model.Product;
 import com.smh.myprojectone.service.CategoryService;
 import com.smh.myprojectone.service.ProductService;
+import com.smh.myprojectone.service.UserService;
 import lombok.Data;
 import org.springframework.stereotype.Controller;
 
@@ -26,6 +27,7 @@ public class AdminController {
 
     private final CategoryService categoryService;
     private final ProductService productService;
+    private final UserService userService;
 
     public static final String uploadDir = System.getProperty("user.dir")+"/src/main/resources/static/images/productImages";
 
@@ -174,7 +176,22 @@ public class AdminController {
         return "redirect:/admin/products";
     }
 
+    @GetMapping("products/details/{id}")
+    public String viewProduct(@PathVariable int id, Model model){
+        model.addAttribute("product", productService.findById(id));
+        return "viewProduct";
+    }
+
     //End Product Section
+
+    //User Section
+    @GetMapping("users")
+    public String showAllUsers(Model model){
+        model.addAttribute("users", userService.findAll());
+        return "users";
+    }
+    //End User Section
+
 
 
 

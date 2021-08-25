@@ -12,7 +12,7 @@
     <title>Document</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #ADD8E6">
     <div class="container-fluid">
         <a class="navbar-brand" th:href="@{/admin}">
             <img th:src="@{/images/logo.jpeg}"  src="../static/images/logo.jpeg" width="auto" height="40" class="d-inline-block align-top" alt=""/>
@@ -36,28 +36,59 @@
         </div>
     </div>
 </nav>
-<div class="jumbotron text-center">
-    <h1 class="display-4">Welcome back, Admin</h1>
-    <p><mark></mark></p>
+<div id="img" class="jumbotron text-center-left ml-1 mr-1">
+        <div class="container">
+            <h1 id="letter" class="display-7 ml-5">Welcome back, Admin</h1>
+        </div>
+
+    <style>
+        #img{
+            background-image: url("https://png.pngtree.com/thumb_back/fw800/back_our/20190619/ourmid/pngtree-taobao-vector-creative-technology-online-shopping-illustration-computer-finger-poster-image_131803.jpg");
+            background-position: center;
+        }
+        #letter{
+            position: static;
+            align-content: space-between;
+        }
+    </style>
 </div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3 pt-3" >
-            <div class="card" style="background-color:white;">
+            <div class="card" style="background-color:#98AFC7;">
                 <div class="card-body">
                     <h4 class="card-title">Categories</h4>
-                    <p class="card-text">!!!</p>
+
                     <a href="#" th:href="@{/admin/categories}" class="card-link btn btn-primary">Manage</a>
 
                 </div>
             </div>
         </div>
         <div class="col-sm-3 pt-3" >
-            <div class="card" style="background-color:white;">
+            <div class="card" style="background-color:#98AFC7;">
                 <div class="card-body">
                     <h4 class="card-title">Products</h4>
-                    <p class="card-text">!!!</p>
+
                     <a href="#" th:href="@{/admin/products}" class="card-link btn btn-primary">Manage</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 pt-3" >
+            <div class="card" style="background-color:#98AFC7;">
+                <div class="card-body">
+                    <h4 class="card-title">Users</h4>
+                    <a href="#" th:href="@{/admin/users}" class="card-link btn btn-primary">Manage</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 pt-3" >
+            <div class="card" style="background-color:#98AFC7;">
+                <div class="card-body">
+                    <h4 class="card-title">Sale History</h4>
+                    <a href="#" th:href="@{/admin/sales}" class="card-link btn btn-primary">Manage</a>
 
                 </div>
             </div>
@@ -65,6 +96,8 @@
 
     </div>
 </div>
+
+<div th:replace="fragments/footer :: footer"></div>
 
 
 
